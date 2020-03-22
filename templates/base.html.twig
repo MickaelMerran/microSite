@@ -3,9 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% block navbar %}
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-link text-decoration-none text-white" href="{{path('panier')}}">{{'navbar.panier' | trans }}</a>
+                <a class="navbar-link text-decoration-none text-white" href="{{path('produit')}}">{{'navbar.produits' | trans }}</a>
+            </nav>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

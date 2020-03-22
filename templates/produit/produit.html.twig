@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{produit.nom | capitalize}}{% endblock %}
+{% block body %}
+<div class="text-center">
+    <h1>{{produit.nom | capitalize}}</h1>
+    <p>{{'table.qte' | trans }}: {{produit.quantite}}</p>
+    <p>{{'table.prix' | trans }}: {{produit.prix}} {{'valeur' | trans }}</p>
+    {% if produit.photo is not null %}
+    <img class="w-25" src="{{ asset('/uploads/'~produit.photo)}}">
+    {% endif %}
+    <br>
+    <br>
+    <button type="button" class="btn btn-danger">
+        <a class="text-decoration-none text-white" href="{{path('delete_produit', {'id': produit.id})}}">
+            {{'sup' | trans }}
+        </a>
+    </button>
+</div>
+<br>
+{{ form(form_add) }}
+
+{% endblock %}

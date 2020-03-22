@@ -1,0 +1,35 @@
+navbar:
+  panier: Panier
+  produits: Produits
+
+titre:
+  index:
+    h1: Liste des produits
+    h2: Ajouter un nouveau produit
+  panier:
+    h1: Mon panier
+
+table:
+  photo: Photo
+  nom: Nom
+  qte: Quantité
+  prix: Prix
+  produit: Produit
+  etat: Etat
+  action: Action
+
+msg:
+  erreur: Il n'y a aucun produit.
+  panier: Votre panier est vide. 
+
+
+Nom: Nom
+photo: 	Photo
+Prix: 	Prix
+Quantite: Quantité
+Sauvegarder: Sauvegarder
+
+valeur: €
+
+sup: Supprimer
+

@@ -1,0 +1,34 @@
+navbar:
+  panier: Bucket
+  produits: Products
+
+titre:
+  index:
+    h1: Products list
+    h2: Add a new product
+  panier:
+    h1: My bucket
+
+table:
+  photo: Picture
+  nom: Name
+  qte: Quantity
+  prix: Price
+  produit: Product
+  etat: State
+  action: Action
+
+
+msg:
+  erreur: There is no product.
+  panier: Your bucket is empty.
+
+Nom: Name
+photo: 	Picture
+Prix: 	Price
+Quantite: Quantity
+Sauvegarder: Save
+
+valeur: $
+
+sup: Delete

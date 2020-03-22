@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">{{'titre.index.h1' | trans }}</h1>
+    {% if produits is not empty %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{'table.photo' | trans }}</th>
+                <th class="text-center">{{'table.nom' | trans }}</th>
+                <th class="text-center">{{'table.qte' | trans }}</th>
+                <th class="text-center">{{'table.prix' | trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{% if produit.photo is not null %}
+                        <img class="w-25" src="{{asset('/uploads/' ~ produit.photo)}}" >
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ path('un_produit',{'id':produit.id})}}">
+                            {{ produit.nom }}
+                        </a>
+                    </td>
+                    <td class="text-center">{{ produit.quantite }}</td>
+                    <td class="text-center">{{ produit.prix }} €</td> 
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>{{'msg.erreur' | trans }} </p>
+    {% endif %}
+    <h1 class="text-center">{{'titre.index.h2' | trans }}</h1>
+    {{ form(form_ajout) }}
+{% endblock %}
