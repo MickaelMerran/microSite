@@ -37,7 +37,7 @@ class PanierController extends AbstractController
     /**
      * @Route("/panier/delete/{id}", name="delete_produit_panier")
      */
-    public function delete(Panier $panier=null){
+    public function delete(Panier $panier){
         if($panier != null){
             $pdo = $this->getDoctrine()->getManager();
             $pdo->remove($panier);

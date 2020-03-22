@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PanierRepository")
  */
@@ -34,7 +35,7 @@ class Panier
     private $etat;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Produit", mappedBy="panier")
+     * @ORM\OneToMany(targetEntity="App\Entity\Produit", mappedBy="panier",)
      */
     private $panier;
 
@@ -113,5 +114,9 @@ class Panier
         }
 
         return $this;
+    }
+
+    public function __toString(){
+        return $this->getPanier();
     }
 }

@@ -16,13 +16,18 @@
         <tbody>
             {% for panier in paniers %}
                 <tr>
-                    <td>{{ panier.produit }}</td>
-                    <td>{{ panier.quantité }}</td> 
-                     <button type="button" class="btn btn-danger">
-                        <a class="text-decoration-none text-white" >
-                            {{'sup' | trans }}
-                        </a>
-                    </button>
+                    <td>{% for paniers in panier.panier %}
+                        je n'arrive pas a afficher
+                        {% endfor %}
+                    </td>
+                    <td>{{ panier.quantite }}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            <a class="text-decoration-none text-white"  href="{{path('delete_produit_panier', {'id': panier.id})}}">
+                                {{'sup' | trans }}
+                            </a>
+                        </button>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
