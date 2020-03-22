@@ -2,6 +2,14 @@
 
 {% block title %}{{produit.nom | capitalize}}{% endblock %}
 {% block body %}
+
+{% for message in app.flashes('success')%}
+    <div class="alert alert-danger">
+    {{message}}
+    </div>
+{% endfor %}
+
+
 <div class="text-center">
     <h1>{{produit.nom | capitalize}}</h1>
     <p>{{'table.qte' | trans }}: {{produit.quantite}}</p>

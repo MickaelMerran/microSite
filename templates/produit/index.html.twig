@@ -3,6 +3,12 @@
 {% block title %}Hello ProduitController!{% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('success')%}
+    <div class="alert alert-success">
+    {{message}}
+    </div>
+    {% endfor %}
+
     <h1 class="text-center">{{'titre.index.h1' | trans }}</h1>
     {% if produits is not empty %}
     <table class="table">
